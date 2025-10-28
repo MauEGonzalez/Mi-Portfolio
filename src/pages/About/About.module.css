@@ -1,0 +1,86 @@
+.aboutSection {
+  padding: 6rem 2rem;
+  background-color: var(--surface-color); /* Un color de fondo ligeramente distinto para separar secciones */
+  min-height: 80vh;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 4rem; /* Espacio entre la imagen y el texto */
+}
+
+.imageContainer {
+  flex: 1; /* Ocupa 1 parte del espacio disponible */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profileImage {
+  width: 100%;
+  max-width: 350px;
+  border-radius: 50%; /* Esto hace la imagen circular */
+  border: 5px solid var(--primary-color);
+  box-shadow: 0 0 25px rgba(187, 134, 252, 0.3); /* Una sombra sutil con el color primario */
+}
+
+.infoContainer {
+  flex: 1.5; /* Ocupa 1.5 partes, dando más espacio al texto */
+}
+
+.infoContainer h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--primary-color);
+}
+
+.infoContainer p {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  line-height: 1.7;
+  color: var(--text-secondary-color);
+}
+
+.certificatesContainer {
+  margin-top: 2rem;
+}
+
+.certificatesContainer h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--secondary-color);
+}
+
+.certificatesContainer ul {
+  list-style: none; /* Quita los puntos de la lista */
+  padding-left: 0;
+}
+
+.certificatesContainer li {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column; /* Apila las columnas verticalmente */
+    text-align: center;
+    gap: 2rem;
+  }
+
+  .infoContainer {
+    order: 2; /* El texto va después de la imagen */
+  }
+
+  .imageContainer {
+    order: 1; /* La imagen va primero */
+  }
+
+  .profileImage {
+    max-width: 250px;
+  }
+}

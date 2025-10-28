@@ -1,0 +1,33 @@
+/* Usaremos variables CSS para manejar fácilmente nuestro tema oscuro */
+:root {
+  --background-color: #121212; /* Un negro no tan puro */
+  --surface-color: #1e1e1e;    /* Para cards o secciones */
+  --primary-color: #bb86fc;     /* Un acento de color violeta */
+  --secondary-color: #03dac6;   /* Otro acento de color turquesa */
+  --text-color: #e1e1e1;        /* Texto principal, un blanco suave */
+  --text-secondary-color: #a0a0a0; /* Texto secundario, más grisáceo */
+}
+
+/* Reseteo básico y configuración global de la fuente */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* En src/index.css */
+body {
+  font-family: 'Poppins', sans-serif; /* <-- LÍNEA MODIFICADA */
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  color: var(--primary-color);
+}
+
+a {
+  color: var(--secondary-color);
+  text-decoration: none;
+}

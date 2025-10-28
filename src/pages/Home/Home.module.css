@@ -1,0 +1,75 @@
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 80px); /* Restamos la altura aproximada del navbar */
+  padding: 0 2rem;
+  text-align: center;
+}
+
+.heroContent {
+  max-width: 800px;
+}
+
+.mainText {
+  font-size: 4rem;
+  font-weight: 700;
+  color: var(--text-color);
+  margin-bottom: 1rem;
+  line-height: 1.1;
+}
+
+/* El span le da el color de acento al nombre o lo que quieras resaltar */
+.mainText span {
+    color: var(--primary-color);
+}
+
+.subText {
+  font-size: 2rem;
+  font-weight: 400;
+  color: var(--text-secondary-color);
+  margin-bottom: 2rem;
+  min-height: 64px; /* Altura fija para que no salte el layout */
+}
+
+/* Estilo para el texto que se está "escribiendo" y el cursor parpadeante */
+.wrap {
+    color: var(--secondary-color);
+    border-right: 0.08em solid var(--secondary-color);
+    animation: blink-caret .75s step-end infinite;
+}
+
+/* Animación del cursor */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: var(--secondary-color); }
+}
+
+.description {
+    font-size: 1.1rem;
+    color: var(--text-secondary-color);
+    margin-bottom: 2.5rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.ctaButton {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  background-size: 200% 100%;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+  text-decoration: none;
+}
+
+.ctaButton:hover {
+  background-position: 100% 0;
+  box-shadow: 0 0 15px var(--primary-color), 0 0 15px var(--secondary-color);
+}
