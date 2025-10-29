@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './About.module.css';
-import fotoPerfil from '../../assets/foto-perfil.jpg'; // Asegúrate que el nombre coincida
+import fotoPerfil from '../../assets/foto-perfil.jpg';
 
 const About = () => {
   return (
@@ -26,7 +26,6 @@ const About = () => {
             <ul>
               <li>✓ Carrera de Desarrollo Web</li>
               <li>✓ React.js</li>
-              {/* Agrega más certificados aquí a medida que los obtengas */}
             </ul>
           </div>
         </div>

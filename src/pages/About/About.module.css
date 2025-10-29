@@ -1,6 +1,6 @@
 .aboutSection {
   padding: 6rem 2rem;
-  background-color: var(--surface-color); /* Un color de fondo ligeramente distinto para separar secciones */
+  background-color: var(--surface-color); 
   min-height: 80vh;
 }
 
@@ -9,11 +9,11 @@
   margin: 0 auto;
   display: flex;
   align-items: center;
-  gap: 4rem; /* Espacio entre la imagen y el texto */
+  gap: 4rem; 
 }
 
 .imageContainer {
-  flex: 1; /* Ocupa 1 parte del espacio disponible */
+  flex: 1; 
   display: flex;
   justify-content: center;
   align-items: center;
@@ -22,13 +22,13 @@
 .profileImage {
   width: 100%;
   max-width: 350px;
-  border-radius: 50%; /* Esto hace la imagen circular */
+  border-radius: 50%; 
   border: 5px solid var(--primary-color);
-  box-shadow: 0 0 25px rgba(187, 134, 252, 0.3); /* Una sombra sutil con el color primario */
+  box-shadow: 0 0 25px rgba(187, 134, 252, 0.3); 
 }
 
 .infoContainer {
-  flex: 1.5; /* Ocupa 1.5 partes, dando más espacio al texto */
+  flex: 1.5; 
 }
 
 .infoContainer h2 {
@@ -55,7 +55,7 @@
 }
 
 .certificatesContainer ul {
-  list-style: none; /* Quita los puntos de la lista */
+  list-style: none; 
   padding-left: 0;
 }
 
@@ -67,17 +67,17 @@
 /* --- Responsive Design --- */
 @media (max-width: 768px) {
   .container {
-    flex-direction: column; /* Apila las columnas verticalmente */
+    flex-direction: column; 
     text-align: center;
     gap: 2rem;
   }
 
   .infoContainer {
-    order: 2; /* El texto va después de la imagen */
+    order: 2; 
   }
 
   .imageContainer {
-    order: 1; /* La imagen va primero */
+    order: 1; 
   }
 
   .profileImage {

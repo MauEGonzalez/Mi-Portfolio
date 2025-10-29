@@ -1,3 +1,48 @@
-.container {
-  padding: 2rem;
+.projectsSection {
+  padding: 6rem 2rem;
+  min-height: 100vh;
+}
+
+.title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 4rem;
+  color: var(--primary-color);
+}
+
+/*
+ * ESTA ES LA REGLA QUE RESUELVE TODO.
+ * Define la grilla.
+*/
+.grid {
+  display: grid;
+  /* 3 columnas de 1 fracción de espacio cada una */
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 2.5rem; /* Espacio entre tarjetas */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* --- Responsive Design --- */
+
+/* Para tablets */
+@media (max-width: 992px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas */
+  }
+}
+
+/* Para celulares */
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr; /* 1 columna */
+  }
+
+  .projectsSection {
+    padding: 4rem 1rem;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
 }
