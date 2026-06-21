@@ -1,15 +1,24 @@
 .aboutSection {
   padding: 6rem 2rem;
   background-color: var(--surface-color); 
-  min-height: 80vh;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .container {
   max-width: 1100px;
   margin: 0 auto;
+  width: 100%;
+}
+
+/* Fila superior para alinear foto y texto */
+.profileRow {
   display: flex;
   align-items: center;
-  gap: 4rem; 
+  gap: 4rem;
+  margin-bottom: 5rem;
 }
 
 .imageContainer {
@@ -44,40 +53,96 @@
   color: var(--text-secondary-color);
 }
 
+.infoContainer strong {
+  color: var(--secondary-color);
+}
+
+/* --- SECCIÓN DE CERTIFICADOS --- */
 .certificatesContainer {
   margin-top: 2rem;
 }
 
 .certificatesContainer h3 {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  color: var(--primary-color);
+  text-align: center;
+}
+
+/* Grilla para las tarjetas de certificados */
+.certificatesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Tarjeta cliqueable */
+.certCard {
+  background-color: var(--background-color);
+  padding: 1.8rem 1.5rem;
+  border-radius: 12px;
+  border: 1px solid #222;
+  text-align: center;
+  text-decoration: none; /* Quita el subrayado de enlace */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.certCard:hover {
+  transform: translateY(-5px);
+  border-color: var(--primary-color);
+  box-shadow: 0 5px 15px rgba(187, 134, 252, 0.15);
+}
+
+.certIcon {
+  font-size: 2rem;
   margin-bottom: 1rem;
-  color: var(--secondary-color);
 }
 
-.certificatesContainer ul {
-  list-style: none; 
-  padding-left: 0;
-}
-
-.certificatesContainer li {
+.certCard h4 {
   font-size: 1.1rem;
-  margin-bottom: 0.5rem;
+  color: var(--text-color);
+  margin-bottom: 0.4rem;
+  font-weight: 600;
+}
+
+.certCard p {
+  font-size: 0.95rem;
+  color: var(--secondary-color);
+  margin-bottom: 1rem;
+}
+
+/* Botón indicador dentro de la tarjeta */
+.viewBadge {
+  margin-top: auto;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #fff;
+  background-color: var(--surface-color);
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  border: 1px solid #333;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.certCard:hover .viewBadge {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
 }
 
 /* --- Responsive Design --- */
-@media (max-width: 768px) {
-  .container {
+@media (max-width: 868px) {
+  .profileRow {
     flex-direction: column; 
     text-align: center;
     gap: 2rem;
+    margin-bottom: 4rem;
   }
 
-  .infoContainer {
-    order: 2; 
-  }
-
-  .imageContainer {
-    order: 1; 
+  .infoContainer h2 {
+    font-size: 2rem;
   }
 
   .profileImage {
