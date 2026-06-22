@@ -20,8 +20,8 @@ const Contact = () => {
     setLoading(true); // 4. Empezamos la carga
     setStatus({ type: '', message: '' }); // Limpiamos mensajes anteriores
 
-    // 5. La URL de nuestro endpoint en el backend
-    const backendUrl = 'https://mi-portfolio-backend-nepq.onrender.com/api/contact';
+    // 5. La NUEVA URL de nuestro endpoint en el backend de Render
+    const backendUrl = 'https://mi-portfolio-backend-702p.onrender.com/api/contact';
 
     // 6. Los datos que enviaremos, deben coincidir con el Modelo
     const formData = { name, email, message };

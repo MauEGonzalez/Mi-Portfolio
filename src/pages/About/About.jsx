@@ -3,12 +3,12 @@ import styles from './About.module.css';
 import fotoPerfil from '../../assets/foto-perfil.jpg';
 
 // Importación de los 6 certificados desde la carpeta assets
-import certDesarrolloWeb from '../../assets/Cert. Desarrollo Web.jpg';
-import certJavascript from '../../assets/Cert. Javascript.jpg';
-import certReact from '../../assets/Cert. React.jpg';
-import certBack1 from '../../assets/Cert. Back 1.jpg';
-import certBack2 from '../../assets/Cert. Back 2.jpg';
-import certBack3 from '../../assets/Cert. Back 3.jpg';
+import certDesarrolloWeb from '../../assets/Cert. Desarrollo Web.png';
+import certJavascript from '../../assets/Cert. Javascript.png';
+import certReact from '../../assets/Cert. React.png';
+import certBack1 from '../../assets/Cert. Back 1.png';
+import certBack2 from '../../assets/Cert. Back 2.png';
+import certBack3 from '../../assets/Cert. Back 3.png';
 
 const About = () => {
   // Array de certificados estructurado con título e imagen importada
@@ -37,10 +37,10 @@ const About = () => {
           <div className={styles.infoContainer}>
             <h2>Sobre Mí</h2>
             <p>
-              ¡Hola! Soy <strong>Mauro Gonzalez</strong>, Desarrollador Web Full-Stack graduado en enero de 2026. Mi viaje en el mundo de la programación comenzó con una gran curiosidad por cómo las ideas se transforman en aplicaciones interactivas, y hoy se consolida con la capacidad de estructurar soluciones robustas tanto en el frontend como en el backend.
+              ¡Hola! Mi nombre es <strong>Mauro Gonzalez</strong>. Soy un Desarrollador Web Full-Stack graduado de CoderHouse apasionado por la resolución de problemas. Me dedico a construir desde sitios web atractivos hasta softwares de gestión complejos que resuelven necesidades reales de negocio.
             </p>
             <p>
-              Me especializo en el ecosistema de JavaScript, dominando el desarrollo de interfaces dinámicas con React y la arquitectura de servidores escalables utilizando Node.js, Express y MongoDB (MERN Stack). Mi enfoque está puesto en escribir código limpio, modular y eficiente.
+              Mi mayor fortaleza es la adaptabilidad técnica: no importa qué tan compleja sea la idea que tengas en la cabeza, yo me encargo de transformarla en una solución digital funcional y plasmarla en la pantalla con código de alto rendimiento.
             </p>
           </div>
         </div>
