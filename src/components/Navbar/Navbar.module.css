@@ -15,12 +15,37 @@
   margin: 0 auto;
 }
 
-.logo a {
+/* --- NUEVAS CLASES PARA EL LOGO CON IMAGEN --- */
+.logoContainer {
+  display: flex;
+  align-items: center;
+}
+
+.logoLink {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem; /* Separación prolija entre la imagen y tu nombre */
+  text-decoration: none;
+}
+
+.logoImage {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  border-radius: 6px; /* Sutil redondeado que acompaña el diseño del favicon */
+}
+
+.logoText {
   font-size: 1.5rem;
   font-weight: bold;
   color: var(--primary-color);
-  text-decoration: none;
+  transition: color 0.3s ease;
 }
+
+.logoLink:hover .logoText {
+  color: var(--secondary-color); /* Lindo efecto sutil al pasar el mouse por el logo */
+}
+/* -------------------------------------------- */
 
 .navList {
   list-style: none;

@@ -6,8 +6,15 @@ const Navbar = () => {
   return (
     <header className={styles.header}>
       <nav className={styles.nav}>
-        <div className={styles.logo}>
-          <NavLink to="/">MG.</NavLink>
+        <div className={styles.logoContainer}>
+          <NavLink to="/" className={styles.logoLink}>
+            <img 
+              src="/favicon-32x32.png" 
+              alt="Logo MG" 
+              className={styles.logoImage} 
+            />
+            <span className={styles.logoText}>Mauro Gonzalez</span>
+          </NavLink>
         </div>
         <ul className={styles.navList}>
           <li>
