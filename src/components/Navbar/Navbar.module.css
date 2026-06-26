@@ -15,7 +15,7 @@
   margin: 0 auto;
 }
 
-/* --- NUEVAS CLASES PARA EL LOGO CON IMAGEN --- */
+/* Contenedor del logo y el texto */
 .logoContainer {
   display: flex;
   align-items: center;
@@ -24,7 +24,7 @@
 .logoLink {
   display: flex;
   align-items: center;
-  gap: 0.75rem; /* Separación prolija entre la imagen y tu nombre */
+  gap: 0.75rem;
   text-decoration: none;
 }
 
@@ -32,7 +32,7 @@
   width: 32px;
   height: 32px;
   object-fit: contain;
-  border-radius: 6px; /* Sutil redondeado que acompaña el diseño del favicon */
+  border-radius: 6px;
 }
 
 .logoText {
@@ -40,13 +40,14 @@
   font-weight: bold;
   color: var(--primary-color);
   transition: color 0.3s ease;
+  white-space: nowrap; /* Evita que tu nombre se rompa en dos renglones */
 }
 
 .logoLink:hover .logoText {
-  color: var(--secondary-color); /* Lindo efecto sutil al pasar el mouse por el logo */
+  color: var(--secondary-color);
 }
-/* -------------------------------------------- */
 
+/* Lista de navegación de escritorio */
 .navList {
   list-style: none;
   display: flex;
@@ -58,6 +59,7 @@
   text-decoration: none;
   font-size: 1rem;
   transition: color 0.3s ease;
+  white-space: nowrap; /* Asegura que los textos de los botones se mantengan en una sola línea */
 }
 
 .navList a:hover {
@@ -67,4 +69,37 @@
 .navList a.active {
   color: var(--secondary-color);
   font-weight: bold;
+}
+
+/* --- MEDIA QUERY PARA DISPOSITIVOS MÓVILES (Celulares) --- */
+@media (max-width: 768px) {
+  .header {
+    padding: 1rem 1rem; /* Reducimos el margen general para ganar espacio de pantalla */
+  }
+
+  .nav {
+    flex-direction: column; /* Apilamos el logo arriba y el menú abajo */
+    gap: 1rem; /* Separación prudente entre ambos bloques */
+  }
+
+  .logoImage {
+    width: 28px; /* Achicamos un pelito el logo para que no sature en pantallas chicas */
+    height: 28px;
+  }
+
+  .logoText {
+    font-size: 1.25rem; /* Ajustamos el tamaño de tu nombre de forma armónica */
+  }
+
+  .navList {
+    width: 100%; /* La grilla de enlaces ocupa todo el ancho */
+    justify-content: space-between; /* Distribuye equitativamente Inicio, Sobre Mí, Proyectos y Contacto */
+    gap: 0.5rem; /* Reducimos la separación fija para evitar desbordes */
+    padding: 0;
+    margin: 0;
+  }
+
+  .navList a {
+    font-size: 0.9rem; /* Un toque más chico para que los dedos puedan clickear cómodos sin encimarse */
+  }
 }
