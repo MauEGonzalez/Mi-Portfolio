@@ -3,13 +3,21 @@ import styles from './Projects.module.css';
 import ProjectCard from '../../components/ProjectCard/ProjectCard';
 
 // Importación de imágenes desde la carpeta assets
+import imgZentia from '../../assets/dashZentia.jpeg'; // Imagen de Zentia agregada
+import imgPoleManager from '../../assets/PoleManagerweb.jpeg';
 import imgPatrimony from '../../assets/patrimony-web.jpg';
 import imgIcoBatista from '../../assets/ico-batista.jpg';
 import imgFiguStore from '../../assets/figu-store.jpg';
-import imgPoleManager from '../../assets/PoleManagerweb.jpeg'; // Nueva imagen agregada
 
-// Array de proyectos actualizado con PoleManager y sin las propiedades repoUrl
+// Array de proyectos actualizado con Zentia en primer lugar
 const projectsData = [
+  {
+    title: "Zentia",
+    description: "Software integral de gestión empresarial con facturación ARCA, control de inventario, proveedores, ventas y flujo de caja.",
+    tags: ["React", "Render", "Base de Datos", "Softwares de Gestión"],
+    imageUrl: imgZentia,
+    demoUrl: "https://www.zentiaweb.com/",
+  },
   {
     title: "PoleManager",
     description: "Software de gestión integral para barberías, optimizando la administración de turnos, clientes y control de negocio.",
