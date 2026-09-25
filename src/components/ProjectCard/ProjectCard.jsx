@@ -1,33 +1,54 @@
-import React from 'react';
+import { whatsappLink } from '../../data/siteConfig';
+import { trackEvent } from '../../lib/analytics';
+import Icon from '../Icon/Icon';
 import styles from './ProjectCard.module.css';
 
-const ProjectCard = ({ title, description, tags, imageUrl, demoUrl }) => {
+const ProjectCard = ({ project, featured = false }) => {
+  const { title, type, description, highlights, tags, imageUrl, demoUrl } = project;
+
   return (
-    <div className={styles.card}>
-      <div className={styles.imageContainer}>
-        <img src={imageUrl} alt={`Captura de pantalla del proyecto ${title}`} />
-      </div>
+    <article className={`${styles.card} ${featured ? styles.featured : ''}`}>
+      <a href={demoUrl} target="_blank" rel="noopener noreferrer" className={styles.imageContainer} tabIndex={-1}>
+        <img src={imageUrl} alt={`Captura del proyecto ${title}`} loading="lazy" width="1200" height="650" />
+      </a>
+
       <div className={styles.content}>
+        <span className={styles.type}>{type}</span>
         <h3>{title}</h3>
         <p>{description}</p>
+
+        {featured && highlights && (
+          <ul className={styles.highlights}>
+            {highlights.map((h) => (
+              <li key={h}>
+                <Icon name="check" size={16} /> {h}
+              </li>
+            ))}
+          </ul>
+        )}
+
         <div className={styles.tags}>
-          {tags.map((tag, index) => (
-            <span key={index} className={styles.tag}>
-              {tag}
-            </span>
+          {tags.map((tag) => (
+            <span key={tag} className={styles.tag}>{tag}</span>
           ))}
         </div>
+
         <div className={styles.links}>
-          <a 
-            href={demoUrl} 
-            target="_blank"  
-            rel="noopener noreferrer" 
+          <a href={demoUrl} target="_blank" rel="noopener noreferrer" className={styles.demo}>
+            Ver proyecto <Icon name="external" size={16} />
+          </a>
+          <a
+            href={whatsappLink(`Hola Mauro, vi el proyecto ${title} en tu web y quiero algo similar.`)}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.similar}
+            onClick={() => trackEvent('Contact', { method: 'whatsapp_project', project: title })}
           >
-            Ver Demo
+            Quiero algo así
           </a>
         </div>
       </div>
-    </div>
+    </article>
   );
 };
 

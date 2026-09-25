@@ -1,0 +1,44 @@
+.section {
+  padding: 2rem 1.5rem 6rem;
+}
+
+.banner {
+  position: relative;
+  overflow: hidden;
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  border-radius: 24px;
+  text-align: center;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(187, 134, 252, 0.22), transparent 50%),
+    radial-gradient(circle at 85% 80%, rgba(3, 218, 198, 0.16), transparent 50%),
+    var(--surface-color);
+  border: 1px solid var(--border-color);
+}
+
+.banner h2 {
+  font-size: clamp(1.7rem, 4vw, 2.4rem);
+  max-width: 700px;
+  margin: 0 auto 1rem;
+}
+
+.banner p {
+  max-width: 560px;
+  margin: 0 auto 2rem;
+  color: var(--text-secondary-color);
+  font-size: 1.05rem;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+@media (max-width: 560px) {
+  .banner {
+    padding: 3rem 1.25rem;
+  }
+}

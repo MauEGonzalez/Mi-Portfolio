@@ -1,0 +1,80 @@
+.footer {
+  border-top: 1px solid var(--border-color);
+  background-color: var(--surface-color);
+  padding: 3rem 1.5rem 2rem;
+}
+
+.inner {
+  max-width: var(--container);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.brand img {
+  border-radius: 7px;
+}
+
+.brand strong {
+  display: block;
+  color: var(--text-color);
+}
+
+.brand span {
+  font-size: 0.9rem;
+  color: var(--text-secondary-color);
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.links a {
+  color: var(--text-secondary-color);
+  font-size: 0.95rem;
+}
+
+.links a:hover {
+  color: var(--text-color);
+}
+
+.social {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.social a {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.social a:hover {
+  color: var(--secondary-color);
+  border-color: var(--secondary-color);
+}
+
+.copy {
+  max-width: var(--container);
+  margin: 2rem auto 0;
+  font-size: 0.85rem;
+  color: var(--text-secondary-color);
+  text-align: center;
+}

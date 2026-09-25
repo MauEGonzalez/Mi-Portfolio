@@ -1,33 +1,60 @@
-/* Usaremos variables CSS para manejar fácilmente nuestro tema oscuro */
 :root {
-  --background-color: #121212; /* Un negro no tan puro */
-  --surface-color: #1e1e1e;    /* Para cards o secciones */
-  --primary-color: #bb86fc;     /* Un acento de color violeta */
-  --secondary-color: #03dac6;   /* Otro acento de color turquesa */
-  --text-color: #e1e1e1;        /* Texto principal, un blanco suave */
-  --text-secondary-color: #a0a0a0; /* Texto secundario, más grisáceo */
+  --background-color: #0f0f12;
+  --surface-color: #18181d;
+  --surface-2: #202027;
+  --border-color: #2a2a33;
+  --primary-color: #bb86fc;
+  --secondary-color: #03dac6;
+  --text-color: #ececf1;
+  --text-secondary-color: #a3a3ad;
+  --gradient: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  --radius: 14px;
+  --container: 1150px;
+  --nav-height: 72px;
 }
 
-/* Reseteo básico y configuración global de la fuente */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-/* En src/index.css */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  font-family: 'Poppins', sans-serif; /* <-- LÍNEA MODIFICADA */
+  font-family: 'Poppins', system-ui, sans-serif;
   background-color: var(--background-color);
   color: var(--text-color);
   line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
 }
 
-h1, h2, h3 {
-  color: var(--primary-color);
+img {
+  max-width: 100%;
+  display: block;
+}
+
+h1, h2, h3, h4 {
+  line-height: 1.2;
+  color: var(--text-color);
 }
 
 a {
   color: var(--secondary-color);
   text-decoration: none;
+}
+
+:focus-visible {
+  outline: 2px solid var(--secondary-color);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
 }

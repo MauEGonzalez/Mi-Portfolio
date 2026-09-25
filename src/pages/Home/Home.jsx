@@ -1,66 +1,89 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import Seo from '../../components/Seo/Seo';
+import Hero from '../../components/Hero/Hero';
+import SectionTitle from '../../components/SectionTitle/SectionTitle';
+import ServiceCard from '../../components/ServiceCard/ServiceCard';
+import ProjectCard from '../../components/ProjectCard/ProjectCard';
+import ProcessSteps from '../../components/ProcessSteps/ProcessSteps';
+import Faq from '../../components/Faq/Faq';
+import CtaBanner from '../../components/CtaBanner/CtaBanner';
+import Button from '../../components/Button/Button';
+import Icon from '../../components/Icon/Icon';
+import { services } from '../../data/services';
+import { projects } from '../../data/projects';
 import styles from './Home.module.css';
 
 const Home = () => {
-  const [loopNum, setLoopNum] = useState(0);
-  const [isDeleting, setIsDeleting] = useState(false);
-  const toRotate = ["Desarrollador Web", "React Developer", "Apasionado por la Tecnología"];
-  const [text, setText] = useState('');
-  const [delta, setDelta] = useState(300 - Math.random() * 100);
-  const period = 2000;
-
-  useEffect(() => {
-    let ticker = setInterval(() => {
-      tick();
-    }, delta);
-
-    return () => {
-      clearInterval(ticker);
-    };
-  }, [text]);
-
-  const tick = () => {
-    let i = loopNum % toRotate.length;
-    let fullText = toRotate[i];
-    let updatedText = isDeleting
-      ? fullText.substring(0, text.length - 1)
-      : fullText.substring(0, text.length + 1);
-
-    setText(updatedText);
-
-    if (isDeleting) {
-      setDelta(prevDelta => prevDelta / 2);
-    }
-
-    if (!isDeleting && updatedText === fullText) {
-      setIsDeleting(true);
-      setDelta(period);
-    } else if (isDeleting && updatedText === '') {
-      setIsDeleting(false);
-      setLoopNum(loopNum + 1);
-      setDelta(500);
-    }
-  };
+  const featured = projects.filter((p) => p.featured);
 
   return (
-    <section className={styles.hero}>
-      <div className={styles.heroContent}>
-        <h1 className={styles.mainText}>
-          Hola, soy Mauro González
-        </h1>
-        <p className={styles.subText}>
-          {`Soy `} 
-          <span className={styles.wrap}>{text}</span>
-        </p>
-        <p className={styles.description}>
-          Convierto ideas en experiencias web interactivas y funcionales. Explora mi trabajo y conoce más sobre mi pasión por el desarrollo.
-        </p>
-        <Link to="/projects" className={styles.ctaButton}>
-          Ver mis Proyectos
-        </Link>
-      </div>
-    </section>
+    <>
+      <Seo
+        description="Desarrollo sistemas de gestión a medida, páginas web y tiendas online para pymes, comercios y emprendedores. Pedí tu presupuesto sin cargo."
+        path="/"
+      />
+
+      <Hero />
+
+      <section className={styles.section} id="servicios">
+        <div className={styles.container}>
+          <SectionTitle
+            eyebrow="Servicios"
+            title="¿En qué te puedo ayudar?"
+            subtitle="Soluciones digitales pensadas para que tu negocio venda más y trabaje mejor."
+          />
+          <div className={styles.servicesGrid}>
+            {services.map((s) => (
+              <ServiceCard key={s.id} service={s} />
+            ))}
+          </div>
+          <div className={styles.center}>
+            <Button to="/servicios" variant="outline">
+              Ver detalle de servicios <Icon name="arrow" size={18} />
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      <section className={`${styles.section} ${styles.alt}`}>
+        <div className={styles.container}>
+          <SectionTitle
+            eyebrow="Proyectos destacados"
+            title="Software que ya está funcionando"
+            subtitle="Sistemas reales que usan negocios todos los días para vender, facturar y organizarse."
+          />
+          <div className={styles.featuredList}>
+            {featured.map((p) => (
+              <ProjectCard key={p.id} project={p} featured />
+            ))}
+          </div>
+          <div className={styles.center}>
+            <Button to="/projects" variant="outline">
+              Ver todos los proyectos <Icon name="arrow" size={18} />
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      <section className={styles.section}>
+        <div className={styles.container}>
+          <SectionTitle
+            eyebrow="Cómo trabajo"
+            title="Un proceso simple y transparente"
+            subtitle="Sabés en todo momento en qué etapa está tu proyecto."
+          />
+          <ProcessSteps />
+        </div>
+      </section>
+
+      <section className={`${styles.section} ${styles.alt}`}>
+        <div className={styles.container}>
+          <SectionTitle eyebrow="Preguntas frecuentes" title="Lo que suelen preguntarme" />
+          <Faq />
+        </div>
+      </section>
+
+      <CtaBanner />
+    </>
   );
 };
 

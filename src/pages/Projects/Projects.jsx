@@ -1,72 +1,46 @@
-import React from 'react';
-import styles from './Projects.module.css';
+import Seo from '../../components/Seo/Seo';
+import SectionTitle from '../../components/SectionTitle/SectionTitle';
 import ProjectCard from '../../components/ProjectCard/ProjectCard';
-
-// Importación de imágenes desde la carpeta assets
-import imgZentia from '../../assets/dashZentia.jpeg'; // Imagen de Zentia agregada
-import imgPoleManager from '../../assets/PoleManagerweb.jpeg';
-import imgPatrimony from '../../assets/patrimony-web.jpg';
-import imgIcoBatista from '../../assets/ico-batista.jpg';
-import imgFiguStore from '../../assets/figu-store.jpg';
-
-// Array de proyectos actualizado con Zentia en primer lugar
-const projectsData = [
-  {
-    title: "Zentia",
-    description: "Software integral de gestión empresarial con facturación ARCA, control de inventario, proveedores, ventas y flujo de caja.",
-    tags: ["React", "Render", "Base de Datos", "Softwares de Gestión"],
-    imageUrl: imgZentia,
-    demoUrl: "https://www.zentiaweb.com/",
-  },
-  {
-    title: "PoleManager",
-    description: "Software de gestión integral para barberías, optimizando la administración de turnos, clientes y control de negocio.",
-    tags: ["React", "Node.js", "MongoDB", "Softwares de Gestión"],
-    imageUrl: imgPoleManager,
-    demoUrl: "https://www.polemanagerweb.com/",
-  },
-  {
-    title: "Patrimony Web",
-    description: "Una landing page moderna para una startup de finanzas, enfocada en la experiencia de usuario y visualización de datos.",
-    tags: ["React", "CSS Modules", "Responsive"],
-    imageUrl: imgPatrimony,
-    demoUrl: "https://patrimony-app.vercel.app/",
-  },
-  {
-    title: "Sitio Web Ico Batista",
-    description: "Sitio web portfolio para la marca de ropa de Ico Batista, optimizado para destacar contenido visual con un diseño minimalista.",
-    tags: ["JavaScript", "HTML5", "CSS Grid"],
-    imageUrl: imgIcoBatista,
-    demoUrl: "https://ico-batista-web.vercel.app/",
-  },
-  {
-    title: "FiguStore",
-    description: "E-commerce funcional de venta de figuras coleccionables de anime, con carrito de compras y gestión dinámica de productos.",
-    tags: ["React", "Firebase", "Context API"],
-    imageUrl: imgFiguStore,
-    demoUrl: "https://figustoreapp.vercel.app/", 
-  },
-];
+import CtaBanner from '../../components/CtaBanner/CtaBanner';
+import { projects } from '../../data/projects';
+import styles from './Projects.module.css';
 
 const Projects = () => {
+  const featured = projects.filter((p) => p.featured);
+  const others = projects.filter((p) => !p.featured);
+
   return (
-    <section className={styles.projectsSection} id="projects"> 
-      
-      <h2 className={styles.title}>Mis Proyectos</h2> 
-      
-      <div className={styles.grid}>
-        {projectsData.map((project, index) => (
-          <ProjectCard
-            key={index}
-            title={project.title}
-            description={project.description}
-            tags={project.tags}
-            imageUrl={project.imageUrl}
-            demoUrl={project.demoUrl}
-          />
-        ))}
-      </div>
-    </section>
+    <>
+      <Seo
+        title="Proyectos"
+        description="Sistemas de gestión, páginas web y tiendas online que desarrollé: Zentia, PoleManager, Patrimony, Ico Batista y FiguStore."
+        path="/projects"
+      />
+
+      <section className={styles.projectsSection}>
+        <SectionTitle
+          as="h1"
+          eyebrow="Portfolio"
+          title="Proyectos"
+          subtitle="Una selección de sistemas y sitios que desarrollé de punta a punta."
+        />
+
+        <div className={styles.featuredList}>
+          {featured.map((p) => (
+            <ProjectCard key={p.id} project={p} featured />
+          ))}
+        </div>
+
+        <h2 className={styles.subTitle}>Webs y tiendas online</h2>
+        <div className={styles.grid}>
+          {others.map((p) => (
+            <ProjectCard key={p.id} project={p} />
+          ))}
+        </div>
+      </section>
+
+      <CtaBanner title="¿Querés un proyecto como estos?" />
+    </>
   );
 };
 

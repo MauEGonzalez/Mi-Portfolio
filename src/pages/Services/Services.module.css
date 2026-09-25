@@ -1,0 +1,24 @@
+.section {
+  padding: 5rem 1.5rem 3rem;
+}
+
+.container {
+  max-width: var(--container);
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 4rem 1.25rem 2rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

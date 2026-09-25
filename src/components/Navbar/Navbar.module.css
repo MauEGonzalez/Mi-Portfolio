@@ -1,105 +1,141 @@
 .header {
-  background-color: var(--surface-color);
-  padding: 1rem 2rem;
-  border-bottom: 1px solid #2a2a2a;
   position: sticky;
   top: 0;
   z-index: 1000;
+  background-color: rgba(15, 15, 18, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-color);
 }
 
 .nav {
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  align-items: center;
-  max-width: 1200px;
+  gap: 1.5rem;
+  max-width: var(--container);
+  height: var(--nav-height);
   margin: 0 auto;
-}
-
-/* Contenedor del logo y el texto */
-.logoContainer {
-  display: flex;
-  align-items: center;
+  padding: 0 1.5rem;
 }
 
 .logoLink {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  text-decoration: none;
+  gap: 0.7rem;
 }
 
 .logoImage {
   width: 32px;
   height: 32px;
-  object-fit: contain;
-  border-radius: 6px;
+  border-radius: 7px;
 }
 
 .logoText {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: var(--primary-color);
-  transition: color 0.3s ease;
-  white-space: nowrap; /* Evita que tu nombre se rompa en dos renglones */
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-color);
+  white-space: nowrap;
 }
 
-.logoLink:hover .logoText {
-  color: var(--secondary-color);
-}
-
-/* Lista de navegación de escritorio */
-.navList {
-  list-style: none;
+.menu {
   display: flex;
+  align-items: center;
   gap: 2rem;
 }
 
-.navList a {
-  color: var(--text-color);
-  text-decoration: none;
-  font-size: 1rem;
-  transition: color 0.3s ease;
-  white-space: nowrap; /* Asegura que los textos de los botones se mantengan en una sola línea */
+.navList {
+  list-style: none;
+  display: flex;
+  gap: 1.75rem;
 }
 
-.navList a:hover {
-  color: var(--primary-color);
+.navList a {
+  color: var(--text-secondary-color);
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: color 0.2s ease;
+  white-space: nowrap;
+}
+
+.navList a:hover,
+.navList a.active {
+  color: var(--text-color);
 }
 
 .navList a.active {
-  color: var(--secondary-color);
-  font-weight: bold;
+  box-shadow: inset 0 -2px 0 var(--secondary-color);
+  padding-bottom: 4px;
 }
 
-/* --- MEDIA QUERY PARA DISPOSITIVOS MÓVILES (Celulares) --- */
-@media (max-width: 768px) {
-  .header {
-    padding: 1rem 1rem; /* Reducimos el margen general para ganar espacio de pantalla */
+.cta {
+  padding: 0.6rem 1.15rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #0f0f12;
+  background: var(--gradient);
+  white-space: nowrap;
+  transition: box-shadow 0.3s ease;
+}
+
+.cta:hover {
+  box-shadow: 0 6px 22px rgba(187, 134, 252, 0.35);
+}
+
+.toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--text-color);
+  cursor: pointer;
+  padding: 0.4rem;
+}
+
+@media (max-width: 900px) {
+  .toggle {
+    display: flex;
   }
 
-  .nav {
-    flex-direction: column; /* Apilamos el logo arriba y el menú abajo */
-    gap: 1rem; /* Separación prudente entre ambos bloques */
+  .menu {
+    position: fixed;
+    inset: var(--nav-height) 0 0 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 2rem;
+    padding: 2rem 1.5rem;
+    background-color: var(--background-color);
+    transform: translateX(100%);
+    visibility: hidden;
+    transition: transform 0.3s ease, visibility 0.3s;
   }
 
-  .logoImage {
-    width: 28px; /* Achicamos un pelito el logo para que no sature en pantallas chicas */
-    height: 28px;
-  }
-
-  .logoText {
-    font-size: 1.25rem; /* Ajustamos el tamaño de tu nombre de forma armónica */
+  .menuOpen {
+    transform: translateX(0);
+    visibility: visible;
   }
 
   .navList {
-    width: 100%; /* La grilla de enlaces ocupa todo el ancho */
-    justify-content: space-between; /* Distribuye equitativamente Inicio, Sobre Mí, Proyectos y Contacto */
-    gap: 0.5rem; /* Reducimos la separación fija para evitar desbordes */
-    padding: 0;
-    margin: 0;
+    flex-direction: column;
+    gap: 0;
   }
 
   .navList a {
-    font-size: 0.9rem; /* Un toque más chico para que los dedos puedan clickear cómodos sin encimarse */
+    display: block;
+    padding: 1rem 0;
+    font-size: 1.2rem;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .navList a.active {
+    box-shadow: none;
+    padding-bottom: 1rem;
+    color: var(--secondary-color);
+  }
+
+  .cta {
+    text-align: center;
+    padding: 1rem;
+    font-size: 1rem;
   }
 }
