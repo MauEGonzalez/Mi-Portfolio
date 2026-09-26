@@ -48,8 +48,8 @@ const Home = () => {
         <div className={styles.container}>
           <SectionTitle
             eyebrow="Proyectos destacados"
-            title="Software que ya está funcionando"
-            subtitle="Sistemas reales que usan negocios todos los días para vender, facturar y organizarse."
+            title="Productos propios, de la idea al lanzamiento"
+            subtitle="Diseñé, desarrollé y lancé estos sistemas de punta a punta. La misma experiencia que pongo en tu proyecto."
           />
           <div className={styles.featuredList}>
             {featured.map((p) => (

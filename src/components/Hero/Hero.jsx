@@ -6,7 +6,7 @@ import Icon from '../Icon/Icon';
 import styles from './Hero.module.css';
 
 const trust = [
-  'Sistemas en uso real con facturación ARCA',
+  'Creador de Zentia y PoleManager, software propio en producción',
   'Trato directo conmigo, sin intermediarios',
   'Webs rápidas y adaptadas a celulares',
 ];

@@ -11,8 +11,8 @@ export const projects = [
     type: 'Software de gestión',
     title: 'Zentia',
     description:
-      'Sistema de gestión integral para empresas: facturación electrónica ARCA, inventario, proveedores, ventas y flujo de caja en un solo lugar.',
-    highlights: ['Facturación ARCA integrada', 'Control de stock en tiempo real', 'Caja y reportes'],
+      'Sistema de gestión en la nube para comercios: ventas, stock, caja, clientes con cuenta corriente y facturación electrónica ARCA, desde cualquier dispositivo.',
+    highlights: ['Facturación electrónica ARCA', 'Stock automático con alertas', 'SaaS con suscripciones y 19 países'],
     tags: ['React', 'Node.js', 'Base de datos'],
     imageUrl: imgZentia,
     demoUrl: 'https://www.zentiaweb.com/',
@@ -23,8 +23,8 @@ export const projects = [
     type: 'Software de gestión',
     title: 'PoleManager',
     description:
-      'Software para barberías que automatiza la agenda de turnos, evita superposiciones y calcula al instante las comisiones de cada barbero.',
-    highlights: ['Agenda de turnos sin superposiciones', 'Comisiones por barbero automáticas', 'Control de caja y stock'],
+      'Sistema de gestión para barberías: agenda de turnos, caja diaria por medio de pago, clientes con historial y producción de cada barbero, desde el celular.',
+    highlights: ['Agenda semanal de turnos', 'Caja diaria por medio de pago', 'Producción de cada barbero'],
     tags: ['React', 'Node.js', 'MongoDB'],
     imageUrl: imgPoleManager,
     demoUrl: 'https://www.polemanagerweb.com/',
