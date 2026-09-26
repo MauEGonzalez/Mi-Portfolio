@@ -23,8 +23,8 @@ export const projects = [
     type: 'Software de gestión',
     title: 'PoleManager',
     description:
-      'Software para barberías que ordena turnos, clientes y la administración del negocio, para que el dueño se enfoque en atender.',
-    highlights: ['Agenda de turnos', 'Ficha de clientes', 'Control del negocio'],
+      'Software para barberías que automatiza la agenda de turnos, evita superposiciones y calcula al instante las comisiones de cada barbero.',
+    highlights: ['Agenda de turnos sin superposiciones', 'Comisiones por barbero automáticas', 'Control de caja y stock'],
     tags: ['React', 'Node.js', 'MongoDB'],
     imageUrl: imgPoleManager,
     demoUrl: 'https://www.polemanagerweb.com/',
