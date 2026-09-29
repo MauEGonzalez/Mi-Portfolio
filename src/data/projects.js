@@ -1,8 +1,8 @@
-import imgZentia from '../assets/dashZentia.webp';
-import imgPoleManager from '../assets/PoleManagerweb.webp';
-import imgPatrimony from '../assets/patrimony-web.webp';
-import imgIcoBatista from '../assets/ico-batista.webp';
-import imgFiguStore from '../assets/figu-store.webp';
+import imgZentia from '../assets/zentia.webp';
+import imgPoleManager from '../assets/polemanager.webp';
+import imgPatrimony from '../assets/patrimony.webp';
+import imgIcoBatista from '../assets/ico-batista-v2.webp';
+import imgFiguStore from '../assets/figustore.webp';
 
 export const projects = [
   {
@@ -31,10 +31,10 @@ export const projects = [
   },
   {
     id: 'patrimony',
-    type: 'Landing page',
-    title: 'Patrimony Web',
+    type: 'Aplicación web',
+    title: 'Patrimony',
     description:
-      'Landing page moderna para una startup de finanzas, enfocada en la experiencia de usuario y la visualización de datos.',
+      'Planificador financiero personal: ingresos, gastos, deudas y patrimonio neto en un solo panel, claro y fácil de usar.',
     tags: ['React', 'CSS Modules', 'Responsive'],
     imageUrl: imgPatrimony,
     demoUrl: 'https://patrimony-app.vercel.app/',

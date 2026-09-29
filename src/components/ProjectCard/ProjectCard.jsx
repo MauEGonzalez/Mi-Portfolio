@@ -9,7 +9,7 @@ const ProjectCard = ({ project, featured = false }) => {
   return (
     <article className={`${styles.card} ${featured ? styles.featured : ''}`}>
       <a href={demoUrl} target="_blank" rel="noopener noreferrer" className={styles.imageContainer} tabIndex={-1}>
-        <img src={imageUrl} alt={`Captura del proyecto ${title}`} loading="lazy" width="1200" height="650" />
+        <img src={imageUrl} alt={`Captura del proyecto ${title}`} loading="lazy" width="1600" height="1000" />
       </a>
 
       <div className={styles.content}>
